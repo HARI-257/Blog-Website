@@ -1,0 +1,14 @@
+<%- include("partials/header.ejs") -%> 
+
+<h1>Home</h1>
+<p><%= homeContent %></p>
+
+    <% blogContents.forEach((blogContent)=>{ %>
+      <h1><%= blogContent.postTitle  %></h1>
+      <p>
+        <%= blogContent.postBody.substring(0,100) + " ..." %>
+        <a href="/posts/<%= blogContent.postTitle %>">Read More</a>
+    </p>
+     
+    <% }) %>
+<%- include("partials/footer.ejs") -%> 
